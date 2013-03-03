@@ -7,6 +7,13 @@ node_dir=nodejs-${VERSION}
 patchfile=nodejs.patch
 
 set -e
+
+if [ "$1" = "clean" ]; then
+	echo Cleaning ...
+	rm -rf "$node_dir"
+	rm -rvf nodejs_${VERSION}*.{dsc,changes,deb,tar.gz}
+fi
+
 if [ ! -f "$node_tar" ]; then
 	wget "$node_url" -nc -c -O "$node_tar"
 fi

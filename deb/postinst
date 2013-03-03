@@ -7,4 +7,6 @@ if [ "$1" = "configure" ]; then
                         --slave /usr/share/man/man1/js.1 js.1 /usr/share/man/man1/nodejs.1
 fi
 
+/usr/lib/node_modules/npm/scripts/relocate.sh /usr/bin/nodejs
+
 #DEBHELPER#
