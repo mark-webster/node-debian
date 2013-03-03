@@ -23,7 +23,13 @@ Package: nodejs
 Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends}
-Conflicts: node
+Conflicts: node,
+ nodejs-dbg,
+ nodejs-dev
+Replaces: nodejs-dbg,
+ nodejs-dev
+Provides: nodejs-dbg,
+ nodejs-dev
 Description: Node.js event-based server-side javascript engine
  Node.js is similar in design to and influenced by systems like
  Ruby's Event Machine or Python's Twisted.
