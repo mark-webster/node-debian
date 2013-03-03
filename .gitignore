@@ -1,0 +1,11 @@
+.hgignore
+.hg
+.*.swp
+new/
+orig/
+nodejs-*/
+node-v*.tar.gz
+nodejs_*.dsc
+nodejs_*.tar.gz
+nodejs_*.changes
+nodejs_*.deb

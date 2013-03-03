@@ -1,0 +1,9 @@
+have node-waf &&
+_node_waf()
+{
+    cur=${COMP_WORDS[COMP_CWORD]}
+    if [ $COMP_CWORD -ge 1 ]; then
+        COMPREPLY=( $( compgen -W "distclean clean configure build install uninstall" $cur ) )
+    fi
+}
+complete -F _node_waf node-waf

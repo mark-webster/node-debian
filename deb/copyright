@@ -1,0 +1,10 @@
+There is nothing official about this package config.
+
+The mainstream Debian package contains everything you need to know about the
+relevant licenses and copyright of everything here.
+
+As for the package config itself, I created some of it, and copied some of
+it from the official Debian package. Do what you want with it. Whatever
+happens is your problem :)
+
+-MDW

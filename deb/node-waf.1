@@ -1,0 +1,43 @@
+.TH node-waf 1 "11 July 2010"
+.
+.SH NAME
+.
+node-waf - WAF helper for building node modules
+.
+.SH SYNOPSIS
+.B node-waf [\fICOMMAND\fR]
+.
+.SH DESCRIPTION
+.PP
+Helper for the waf build system that is included in nodejs-dev package.
+.P
+Typical usage is :
+\fInode-waf\fP \fBconfigure\fR \fBbuild\fR
+.
+.SH ENVIRONMENT VARIABLE
+.P
+\fBNODE_PATH\fR sets the path where the module is installed.
+This environment variable may be set when calling \fBconfigure\fR command.
+If $HOME is set, it defaults to $HOME/.node_libraries, else to /usr/lib/nodejs.
+.
+.SH COMMANDS
+.TP
+\fBdistclean\fR
+Removes all files created by \fInode-waf\fP.
+This may be useful when using a new node release.
+.TP
+\fBclean\fR
+.TP
+\fBconfigure\fR
+.TP
+\fBbuild\fR
+.TP
+\fBinstall\fR
+Install to NODE_PATH.
+.TP
+\fBuninstall\fR
+Uninstall module from NODE_PATH.
+.
+.SH "SEE ALSO"
+.
+.BR node(1)
