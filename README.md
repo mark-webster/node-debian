@@ -1,7 +1,7 @@
 node-debian
 ===========
 
-Create your own Debian dpkg install packages (.deb) for the latest version of node.js
+Create your own Debian/Ubuntu dpkg install packages (.deb) for any version of node.js
 
 This project doesn't contain the install packages for node. Instead, it provides an
 extremely thin set of config files for building your own install packages. This is
@@ -22,7 +22,11 @@ pain in my ass.
 Instructions
 ============
 
-Run ./build.sh
+Run ./build.sh {clean} {version}
+eg ./build.sh
+or ./build.sh clean
+or ./build.sh 0.9.12
+or ./build.sh clean 0.8.22
 
 
 Detailed instructions
