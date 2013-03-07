@@ -1,6 +1,6 @@
-nodejs (0.8.21-1) testing; urgency=low
+nodejs (${VERSION}-1) UNRELEASED; urgency=low
 
-  * This totally sloppy package was created.
+  * This package was created.
 
  -- Mark Webster <mark.webster@gmail.com>  Sat, 02 March 2013 21:34:00 +0000
 
