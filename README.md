@@ -23,9 +23,13 @@ Instructions
 ============
 
 Run ./build.sh {clean} {version}
+
 eg ./build.sh
+
 or ./build.sh clean
-or ./build.sh 0.9.12
+
+or ./build.sh 0.10.0
+
 or ./build.sh clean 0.8.22
 
 
