@@ -8,7 +8,8 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	./configure --debug --prefix `pwd`/debian/nodejs/usr
+	#./configure --debug --prefix `pwd`/debian/nodejs/usr
+	./configure --prefix `pwd`/debian/nodejs/usr
 	touch $@
 
 
@@ -38,7 +39,7 @@ install: build
 	$(MAKE) install
 	mv debian/nodejs/usr/bin/node debian/nodejs/usr/bin/nodejs
 	mv debian/nodejs/usr/share/man/man1/node.1 debian/nodejs/usr/share/man/man1/nodejs.1
-	cp -L node_g debian/nodejs/usr/bin
+	#cp -L node_g debian/nodejs/usr/bin
 
 
 # Build architecture-independent files here.
