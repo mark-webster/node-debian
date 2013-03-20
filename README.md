@@ -40,7 +40,7 @@ If you are new to building debian packages, you will need to install a lot of De
 build & packaging tools. I don't know exactly what packages you need to install, but
 at a minimum you should have:
 
- apt-get install devscripts debhelper dpkg-dev make g++ cdbs dh-buildinfo openssl pkg-config build-essential curl zlib1g-dev
+ apt-get install devscripts debhelper dpkg-dev make g++ cdbs dh-buildinfo openssl pkg-config build-essential curl zlib1g-dev wget
 
 After this, it should be easy to work out what else you need.
 
