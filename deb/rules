@@ -33,12 +33,12 @@ clean:
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
-	dh_installdirs
+#	dh_installdirs
 	# Add here commands to install the package into debian/nodejs
 	$(MAKE) install
 	mv debian/nodejs/usr/bin/node debian/nodejs/usr/bin/nodejs
 	mv debian/nodejs/usr/share/man/man1/node.1 debian/nodejs/usr/share/man/man1/nodejs.1
+	dh_prep
 	#cp -L node_g debian/nodejs/usr/bin
 
 
