@@ -4,12 +4,14 @@
 #export DH_VERBOSE=1
 
 
+BUILDDIR=debian/nodejs/usr
+
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	#./configure --debug --prefix `pwd`/debian/nodejs/usr
-	./configure --prefix `pwd`/debian/nodejs/usr
+	#./configure --debug --prefix `pwd`/$(BUILDDIR)
+	./configure --prefix `pwd`/$(BUILDDIR)
 	touch $@
 
 
@@ -24,7 +26,7 @@ build-stamp: configure-stamp
 clean: 
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp debian/nodejs
+	rm -rf build-stamp configure-stamp debian/nodejs
 	# Add here commands to clean up after the build process.
 	$(MAKE) distclean
 	dh_clean 
@@ -34,11 +36,13 @@ install: build
 	dh_testdir
 	dh_testroot
 #	dh_installdirs
+	dh_prep
 	# Add here commands to install the package into debian/nodejs
 	$(MAKE) install
-	mv debian/nodejs/usr/bin/node debian/nodejs/usr/bin/nodejs
-	mv debian/nodejs/usr/share/man/man1/node.1 debian/nodejs/usr/share/man/man1/nodejs.1
-	dh_prep
+	@echo '*******************************************************'
+	-mv -v $(BUILDDIR)/bin/node $(BUILDDIR)/bin/nodejs
+	-mv -v $(BUILDDIR)/share/man/man1/node.1 $(BUILDDIR)/share/man/man1/nodejs.1
+	-if [ ! -f $(BUILDDIR)/lib/node_modules/npm/scripts/relocate.sh ]; then cp -v debian/relocate.sh $(BUILDDIR)/lib/node_modules/npm/scripts; fi
 	#cp -L node_g debian/nodejs/usr/bin
 
 
