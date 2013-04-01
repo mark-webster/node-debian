@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.10.1
+VERSION=0.10.2
 clean=0
 
 set -e
