@@ -2,12 +2,14 @@
 
 VERSION=0.10.9
 clean=0
+srcdeb=""
 
 set -e
 while [ ! -z "$1" ]; do
 	[[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && VERSION=$1
 	[[ "$1" =~ \.patch$ ]] && patchfile=$1
 	[ "$1" = "clean" ] && clean=1
+	[ "$1" = "source" ] && srcdeb="-S"
 	shift
 done
 
@@ -47,7 +49,10 @@ if [ ! -d "$node_dir/debian" ]; then
 fi
 
 cd "$node_dir"
-dpkg-buildpackage
+dpkg-buildpackage $srcdeb -uc
 
 cd -
-ls -l nodejs_*deb
+
+[ "$srcdeb" = "" ]   && ls -l nodejs_*deb
+[ "$srcdeb" = "-S" ] && ls -l nodejs_*
+
