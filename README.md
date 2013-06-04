@@ -33,6 +33,13 @@ or ./build.sh 0.10.0
 or ./build.sh clean 0.8.22
 
 
+Alternatively run:
+
+./build.sh source
+
+to build the source package (for example if you want to use pbuilder)
+
+
 Detailed instructions
 =====================
 
