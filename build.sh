@@ -47,7 +47,7 @@ if [ ! -d "$node_dir/debian" ]; then
 fi
 
 cd "$node_dir"
-dpkg-buildpackage
+dpkg-buildpackage -j8
 
 cd -
 ls -l nodejs_*deb
