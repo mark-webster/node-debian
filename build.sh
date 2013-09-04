@@ -49,7 +49,7 @@ if [ ! -d "$node_dir/debian" ]; then
 fi
 
 cd "$node_dir"
-dpkg-buildpackage $srcdeb -uc
+dpkg-buildpackage $srcdeb -uc -j6
 
 cd -
 
