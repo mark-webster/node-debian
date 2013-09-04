@@ -5,13 +5,19 @@ clean=0
 srcdeb=""
 
 set -e
-while [ ! -z "$1" ]; do
-	[[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && VERSION=$1
-	[[ "$1" =~ \.patch$ ]] && patchfile=$1
-	[ "$1" = "clean" ] && clean=1
-	[ "$1" = "source" ] && srcdeb="-S"
-	shift
-done
+if [ $# -eq 0 ] ; then
+    #If no argument is given, get the latest version from the download page
+    VERSION=$(wget http://nodejs.org/download/ -qO- | grep "Current version" | sed 's/.*<b>v\([^<]*\)<\/b>.*/\1/')
+    echo "Building latest Node.js version (v${VERSION})"
+else #Use the arguments from the command line
+    while [ ! -z "$1" ]; do
+        [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && VERSION=$1
+        [[ "$1" =~ \.patch$ ]] && patchfile=$1
+        [ "$1" = "clean" ] && clean=1
+        [ "$1" = "source" ] && srcdeb="-S"
+        shift
+    done
+fi
 
 node_url=http://nodejs.org/dist/v${VERSION}/node-v${VERSION}.tar.gz
 node_tar=node-v${VERSION}.tar.gz
