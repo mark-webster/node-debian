@@ -1,7 +1,7 @@
 Source: nodejs
-Section: web
+Section: devel
 Priority: extra
-Maintainer: Mark Webster <mark.webster@via-vox.net>
+Maintainer: Sean O'Dell <sean@celsoft.com>
 DM-Upload-Allowed: yes
 Build-Depends: python,
  cdbs,
