@@ -17,6 +17,11 @@ node_url=http://nodejs.org/dist/v${VERSION}/node-v${VERSION}.tar.gz
 node_tar=node-v${VERSION}.tar.gz
 node_dir=nodejs-${VERSION}
 
+# Maintain old behavior of script
+if [ -z $DEBIAN_CONCURRENCY ]; then
+    export DEBIAN_CONCURRENCY=6
+fi
+
 if [ "$clean" -eq 1 ]; then
 	echo Cleaning v${VERSION}...
 	rm -rf "$node_dir"
@@ -49,7 +54,7 @@ if [ ! -d "$node_dir/debian" ]; then
 fi
 
 cd "$node_dir"
-dpkg-buildpackage $srcdeb -uc -j6
+dpkg-buildpackage $srcdeb -uc -j${DEBIAN_CONCURRENCY}
 
 cd -
 

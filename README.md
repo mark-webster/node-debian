@@ -51,3 +51,8 @@ at a minimum you should have:
 
 After this, it should be easy to work out what else you need.
 
+The default build uses six processes to quickly create the package.  If this puts too
+much of a load on your system, you can `export DEBIAN_CONCURRENCY=2`, or such
+number that is comfortable for your system,
+
+
