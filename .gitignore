@@ -9,3 +9,4 @@ nodejs_*.dsc
 nodejs_*.tar.gz
 nodejs_*.changes
 nodejs_*.deb
+/.project

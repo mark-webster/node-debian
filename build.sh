@@ -56,3 +56,4 @@ cd -
 [ "$srcdeb" = "" ]   && ls -l nodejs_*deb
 [ "$srcdeb" = "-S" ] && ls -l nodejs_*
 
+/bin/true
